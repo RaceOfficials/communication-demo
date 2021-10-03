@@ -17,8 +17,9 @@ public class Client {
         try {
             Socket socket = new Socket();
             int port = 5001;
-            InetSocketAddress IP = new InetSocketAddress("x.x.x.x", port); // commented out IP
+            InetSocketAddress IP = new InetSocketAddress("localhost", port); // commented out IP
             socket.connect(IP);
+            System.out.println("Connected");
             BufferedReader in
                     = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
@@ -33,18 +34,42 @@ public class Client {
         Runnable communicationRunnable = () -> {
             try {
                 if (in.ready()){
-                    System.out.println("Message from server: " + in.readLine());
-                    out.println(name + ": " + Time.valueOf(LocalTime.now())); // TODO FIX, this won't always work
-                    // as locations aren't sent this way
+                    String msg = in.readLine();
+                    if (msg.equals("2")){
+                        System.out.println("Received restart signal");
+                    } else if (msg.equals("1")){
+                        // Server Status good
+                    } else if (msg.equals("0")){
+                       System.out.println("Received yellow flag");
+                       // Teams handle yellow flag
+                    } else if (msg.equals("-1")){
+                        System.out.println("Received red flag");
+                        // Teams handle red flag
+                    }
+                    out.println(getStatus() + " " + name + ": " + Time.valueOf(LocalTime.now()));
                 }
             } catch (IOException e) {
                 System.out.println("I/O Failed");
-                System.exit(-1);
-                // TODO Raise Error on Server
+
             }
         };
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2);
-        executorService.scheduleAtFixedRate(communicationRunnable, 0, 500, TimeUnit.MILLISECONDS);
+        executorService.scheduleAtFixedRate(communicationRunnable, 0, 1000, TimeUnit.MILLISECONDS);
         // socket close
+    }
+
+    private static int getStatus(){
+        // Dummy Code: Implement in your control loop and call in client code
+        // if good, return 1
+        // if yellow flag, return 0
+        // if red flag, return -1
+        double random = Math.random() * 100;
+        if (random >= 0 && random <= 94){
+            return 1;
+        } else if (random > 92 && random <= 97){
+            return 0;
+        } else {
+            return -1;
+        }
     }
 }
