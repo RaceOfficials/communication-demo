@@ -7,7 +7,7 @@ You should use this jar as a means to test your communications protocol with our
 
 ## Running the Server
 
-The .jar file in this repository can be ran locally for you to test your communication ability. Download the jar file, and run it on your machine using the following command:
+The .jar file in this repository can be ran locally for you to test your communication ability. Download the jar file (here)[https://github.com/RaceOfficials/socket-server/raw/main/client/socket/server.jar], and run it on your machine using the following command:
 `java -jar server.jar`.
 
 ## Java
