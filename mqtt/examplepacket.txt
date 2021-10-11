@@ -1,0 +1,26 @@
+[{
+  {
+  "version": "1",
+  "tagId": "24576",
+  "success": true,
+  "timestamp": 1524496105.895,
+    "coordinates": {
+      "x": 1000,
+      "y": 1000,
+      "z": 0
+    },
+    "orientation": {
+      "yaw": 0,
+      "roll": 0,
+      "pitch": 0
+    },
+    "metrics": {
+      "latency": 2.1,
+      "rates": {
+        "update": 52.89,
+        "success": 52.89
+      }
+    }
+  }
+}
+}]
