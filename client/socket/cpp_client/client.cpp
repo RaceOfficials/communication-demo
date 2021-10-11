@@ -50,7 +50,7 @@ int main ( int argc, char *argv[] )
   try
     {
       // Create the client socket
-      ClientSocket client_socket ("172.16.182.135", 5001 ); // enter your IP here, wherever you run the server (use ipconfig on windows)
+      ClientSocket client_socket ("localhost", 5001 ); // enter your IP here, wherever you run the server (use ipconfig on windows)
       cout << "Connected." << endl;
       string name = argv[1];
 
