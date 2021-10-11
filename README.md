@@ -3,6 +3,12 @@
 Provided in this repository are a .jar file that you can use to run an example of the server locally on your computer, as well as the code that you can run on your Raspberry Pi to communicate with the server.
 You should use this jar as a means to test your communications protocol with our server, to ensure that you are able to send heartbeats and receive status codes from the server.
 
+All that is important in terms of formatting is shown in each of these files. The format should be as following for messages you are sending to the server:
+
+`(STATUS CODE) (TEAM NAME): (TIMESTAMP)`
+
+Any extra additions to that string that needs to be sent are shown in the respective client code. 
+
 **NOTE:** This code is only *one* of the *two* communications protocols we will be using in the race. Due to the nature of the positioning system's setup, we are unable to add these heartbeats/codes to that server. For that reason, you will connect to that server separately. The code for this will be provided soon.
 
 ## Running the Server
