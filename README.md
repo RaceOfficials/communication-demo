@@ -9,7 +9,7 @@ All that is important in terms of formatting is shown in each of these files. Th
 
 Any extra additions to that string that needs to be sent are shown in the respective client code. 
 
-**NOTE:** This code is only *one* of the *two* communications protocols we will be using in the race. Due to the nature of the positioning system's setup, we are unable to add these heartbeats/codes to that server. For that reason, you will connect to that server separately. The code for this will be provided soon.
+**NOTE:** This code is only *one* of the *two* communications protocols we will be using in the race. Due to the nature of the positioning system's setup, we are unable to add these heartbeats/codes to that server. For that reason, you will connect to that server separately. An example of what this code *might* look like in python is provided in the mqtt folder, as well as an example packet that you can use to practice parsing what you will receive from the server. This is subject to change, as this has not yet been tested, since the positioning system is not yet set up. 
 
 ## Running the Server
 
