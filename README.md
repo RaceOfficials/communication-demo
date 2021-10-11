@@ -37,5 +37,5 @@ Replace "localhost" on line 53 of the code with your IP. You can find this on wi
 
 More speciifc instructions for C++ can be found in the README in the `cpp_client` folder. 
 
-If you have other specific questions, please feel free to reach out on GroupMe or Discord, or call/text at (405)-695-1054
+If you have other specific questions, please feel free to reach out on GroupMe or Discord (isaac#2222), or call/text at (405)-695-1054
 
