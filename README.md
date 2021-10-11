@@ -29,4 +29,7 @@ Run the file with `python client.py (TEAM_NAME)`. Depending on your python insta
 Example C++ code is provided in the `cpp_client` folder. Before you are able to test your ablility to communicate, you need to update the IP in the client code. 
 Replace "localhost" on line 53 of the code with your IP. You can find this on windows by running `ipconfig`. 
 
-More speciifc instructions for C++ can be found in the READMe in the `cpp_client` folder. 
+More speciifc instructions for C++ can be found in the README in the `cpp_client` folder. 
+
+If you have other specific questions, please feel free to reach out on GroupMe or Discord, or call/text at (405)-695-1054
+
