@@ -29,7 +29,6 @@ void doCommunications(ClientSocket client_socket, string name){
             string message = getStatus() + " " + name + ": " + str + "\r\n";
             client_socket << message;
             client_socket >> reply;
-            string neg_one = "-1";
             if (reply.find("2") != string::npos){
                 cout << "Restart signal received." << endl;
             } else if (reply.find("-1") != string::npos){
