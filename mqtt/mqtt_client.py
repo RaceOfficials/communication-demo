@@ -3,7 +3,7 @@ import ssl
 import sys
 import json
 
-host = "localhost" # change
+host = "localhost"
 port = 1883
 topic = "tags" 
 
@@ -13,14 +13,18 @@ def on_connect(client, userdata, flags, rc):
 # callback triggered by a new Pozyx data packet
 def on_message(client, userdata, msg):       
     received_json = json.loads(msg.payload.decode())
-    with open('30282_lap_max_movingavg3d_meters.json', 'a') as f1:
-        if (received_json[0]['tagId'] == "30282"):
-            f1.writelines("x: " + str(received_json[0]['data']['coordinates']['x'] / 1000) + 
-            " y: " + str(received_json[0]['data']['coordinates']['y'] / 1000) + 
-            " z: " + str(received_json[0]['data']['coordinates']['z'] / 1000))
-            f1.write('\n')
-    with open('30282_lap_max_movingavg3d.json', 'a') as f:
-        if (received_json[0]['tagId'] == "30282"):
+    with open('new_coords.json', 'a') as f1:
+        if (received_json[0]['tagId'] == "30310"):
+            try:
+                f1.writelines("x: " + str(received_json[0]['data']['coordinates']['x'] / 1000) + 
+                " y: " + str(received_json[0]['data']['coordinates']['y'] / 1000) + 
+                " z: " + str(received_json[0]['data']['coordinates']['z'] / 1000))
+                f1.write('\n')
+            
+            except KeyError:
+                pass
+    with open('new_coords_all.json', 'a') as f:
+        if (received_json[0]['tagId'] == "30310"):
             f.writelines(msg.payload.decode())
             f.write('\n')
         print("Positioning update:", msg.payload.decode())
